@@ -1,10 +1,8 @@
-import {Search} from "./components/search/search";
+import {AppRouter} from "./routers/AppRouter";
 
 function MLTest() {
     return (
-        <div>
-            <Search />
-        </div>
+        <AppRouter />
     );
 }
 

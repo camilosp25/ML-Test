@@ -1,7 +1,15 @@
 .container-search {
     background-color: #FFE600;
+    display: flex;
+    padding: 0 15%;
 }
 
-.img-logo{
+.container-search-group {
+    width: 100%;
+}
+
+.img-logo {
+    float: right;
+    margin-right: 1rem;
     width: 65px;
 }
