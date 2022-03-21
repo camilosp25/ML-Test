@@ -1,14 +1,35 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import NumberFormat from 'react-number-format';
 import './detail.css';
 import {Breadcrumb} from "../breadcrumb/breadcrumb";
+import {conditionText} from "../../helpers/utils";
+import {getDetail} from "../../helpers/productsService";
 import {useParams} from "react-router";
 
 export const Detail = () => {
 
-    const imgProduct = `/assets/img.png`;
+    const [detail, setDetail] = useState({
+        detailData: {}, descriptionData: {}
+    });
+
+    const {detailData, descriptionData} = detail;
 
     const {id} = useParams();
+
+    useEffect(() => {
+        getDetail(id).then((data) => {
+            setDetail({
+                detailData: data.detailData,
+                descriptionData: data.descriptionData
+            })
+        });
+    }, []);
+
+    let imgProduct = '';
+
+    if (detailData.pictures) {
+        imgProduct = detailData.pictures[0].url;
+    }
 
     return (
         <>
@@ -22,18 +43,18 @@ export const Detail = () => {
                                 Descripción del producto
                             </div>
                             <div className="product-description">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                {descriptionData.plain_text}
                             </div>
                         </div>
                         <div className="product-specs-container">
                             <div className="product-status">
-                                Nuevo
+                                {conditionText(detailData.condition)}
                             </div>
                             <div className="product-name">
-                                Nombre producto bien largo para poder ajustar el texto en dado caso
+                                {detailData.title}
                             </div>
                             <div className="product-price">
-                                <NumberFormat value='4000000' displayType={'text'} thousandSeparator={'.'}
+                                <NumberFormat value={detailData.price} displayType={'text'} thousandSeparator={'.'}
                                               decimalSeparator={','} prefix={'$'}/>
                             </div>
                             <div className="button-buy">

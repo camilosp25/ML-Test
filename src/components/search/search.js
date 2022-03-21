@@ -2,7 +2,7 @@ import React, {useContext, useState} from "react";
 import './search.css';
 import {search} from '../../helpers/productsService';
 import {useNavigate} from "react-router";
-import {UserContext} from "../UserContext";
+import {ListContext} from "../ListContext";
 
 export const Search = () => {
 
@@ -10,7 +10,7 @@ export const Search = () => {
     const imageSearchPath = `/assets/ic_Search.png`;
     const [inputValue, setInputValue] = useState('');
     const navigate = useNavigate();
-    const {setProducts} = useContext(UserContext);
+    const {setProducts} = useContext(ListContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();

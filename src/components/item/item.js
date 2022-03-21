@@ -1,37 +1,36 @@
-import React, {useState} from "react";
+import React from "react";
 import NumberFormat from 'react-number-format';
 import './item.css';
 import {Link} from "react-router-dom";
+import {useNavigate} from "react-router";
+import {conditionText} from "../../helpers/utils";
 
 export const Item = ({item}) => {
 
     const thumbnail = item.thumbnail;
+    const navigate = useNavigate();
 
-    const contidionText = (condition) => {
-        let text = '';
-        if (condition === 'new') {
-            text = 'Nuevo';
-        }
-        if (condition === 'used') {
-            text = 'Usado';
-        }
-        return text;
-    };
+    const handleDetail = (e) => {
+        e.preventDefault();
+
+        navigate(`/items/${item.id}`);
+
+    }
 
     return (
         <>
             <div className="container-item">
                 <div className="row">
                     <div className="col-9">
-                        <Link to={`/items/${item.id}`}>
+                        <a onClick={handleDetail}>
                             <img src={thumbnail} className="thumbnail"/>
-                        </Link>
+                        </a>
                         <div className="product-details">
                             <div className="price">
-                                <Link to={`/items/${item.id}`}>
+                                <a onClick={handleDetail}>
                                     <NumberFormat value={item.price} displayType={'text'} thousandSeparator={'.'}
                                                   decimalSeparator={','} prefix={'$'}/>
-                                </Link>
+                                </a>
                             </div>
                             <div className="item-detail">
                                 <Link to={`/items/${item.id}`}>
@@ -39,7 +38,7 @@ export const Item = ({item}) => {
                                 </Link>
                             </div>
                             <div className="item-detail">
-                                {contidionText(item.condition)}
+                                {conditionText(item.condition)}
                             </div>
                         </div>
                     </div>

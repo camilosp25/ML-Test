@@ -2,11 +2,11 @@ import React, {useContext} from 'react';
 import './list.css';
 import {Breadcrumb} from '../breadcrumb/breadcrumb';
 import {Item} from '../item/item';
-import {UserContext} from '../UserContext';
+import {ListContext} from '../ListContext';
 
 export const List = () => {
 
-    const {response} = useContext(UserContext);
+    const {response} = useContext(ListContext);
 
     const validateResponse = () => {
         if (Object.keys(response).length > 0) {

@@ -1,5 +1,5 @@
 import {AppRouter} from "./routers/AppRouter";
-import {UserContext} from "./components/UserContext";
+import {ListContext} from "./components/ListContext";
 import {useState} from "react";
 
 function MLTest() {
@@ -7,14 +7,14 @@ function MLTest() {
     const [response, setProducts] = useState({});
 
     return (
-        <UserContext.Provider value={{
+        <ListContext.Provider value={{
             response,
             setProducts
         }}>
 
-            <AppRouter />
+            <AppRouter/>
 
-        </UserContext.Provider>
+        </ListContext.Provider>
     );
 }
 
