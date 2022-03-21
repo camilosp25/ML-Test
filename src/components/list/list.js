@@ -1,16 +1,29 @@
-import React from "react";
+import React, {useContext} from 'react';
 import './list.css';
-import {Breadcrumb} from "../breadcrumb/breadcrumb";
-import {Item} from "../item/item";
+import {Breadcrumb} from '../breadcrumb/breadcrumb';
+import {Item} from '../item/item';
+import {UserContext} from '../UserContext';
 
 export const List = () => {
 
-    const items = [
-        {id: 1111, productName: 'Iphone 14', price: '4000000', status:'casi nuevo', location: 'Bogotá'},
-        {id: 2222, productName: 'Tv chimba', price: '4000000', status:'casi nuevo', location: 'Bogotá'},
-        {id: 3333, productName: 'Multifuncional QK', price: '4000000', status:'casi nuevo', location: 'Bogotá'},
-        {id: 4444, productName: 'otra vaina', price: '4000000', status:'casi nuevo', location: 'Bogotá'},
-    ]
+    const {response} = useContext(UserContext);
+
+    const validateResponse = () => {
+        if (Object.keys(response).length > 0) {
+            if (response.results.length > 0) {
+                return response.results.map(item => (
+                    <Item
+                        key={item.id}
+                        item={item}
+                    />
+                ))
+            } else {
+                return 'No existen resultados para la búsqueda';
+            }
+        } else {
+            return 'No existen resultados para la búsqueda';
+        }
+    };
 
     return (
         <>
@@ -18,12 +31,7 @@ export const List = () => {
                 <Breadcrumb/>
                 <div className="container-list">
                     {
-                        items.map(item => (
-                            <Item
-                                key={item.id}
-                                item={item}
-                            />
-                        ))
+                        validateResponse()
                     }
                 </div>
             </div>

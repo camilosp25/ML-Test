@@ -10,9 +10,9 @@ export function AppRouter() {
         <BrowserRouter>
             <Search />
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="items/:id" element={<Detail />} />
-                <Route path="items" element={<List />} />
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="items/:id" element={<Detail />} />
+                <Route exact path="items" element={<List />} />
             </Routes>
         </BrowserRouter>
     );

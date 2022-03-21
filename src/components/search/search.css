@@ -13,3 +13,8 @@
     margin-right: 1rem;
     width: 65px;
 }
+
+.form-search {
+    display: flex;
+    width: 100%;
+}

@@ -4,7 +4,7 @@ import './detail.css';
 import {Breadcrumb} from "../breadcrumb/breadcrumb";
 import {useParams} from "react-router";
 
-export const Detail = ({item}) => {
+export const Detail = () => {
 
     const imgProduct = `/assets/img.png`;
 
