@@ -18,10 +18,10 @@ export const List = () => {
                     />
                 ))
             } else {
-                return 'No existen resultados para la búsqueda';
+                return (<div className="container-no-result">No existen resultados para la búsqueda</div>);
             }
         } else {
-            return 'No existen resultados para la búsqueda';
+            return (<div className="container-no-result">No existen resultados para la búsqueda</div>);
         }
     };
 

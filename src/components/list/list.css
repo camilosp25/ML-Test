@@ -3,3 +3,8 @@
     padding: 0 16px 0 16px;
     margin-bottom: 50px;
 }
+
+.container-no-result {
+    margin: 32px 0 32px 0;
+    padding: 32px;
+}

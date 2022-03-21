@@ -22,15 +22,15 @@ export const Item = ({item}) => {
             <div className="container-item">
                 <div className="row">
                     <div className="col-9">
-                        <a onClick={handleDetail}>
+                        <Link to={`/items/${item.id}`} onClick={handleDetail}>
                             <img src={thumbnail} className="thumbnail"/>
-                        </a>
+                        </Link>
                         <div className="product-details">
                             <div className="price">
-                                <a onClick={handleDetail}>
+                                <Link to={`/items/${item.id}`} onClick={handleDetail}>
                                     <NumberFormat value={item.price} displayType={'text'} thousandSeparator={'.'}
                                                   decimalSeparator={','} prefix={'$'}/>
-                                </a>
+                                </Link>
                             </div>
                             <div className="item-detail">
                                 <Link to={`/items/${item.id}`}>

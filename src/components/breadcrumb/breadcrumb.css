@@ -1,3 +1,7 @@
+.breadcrumb-container{
+    display: flex;
+}
+
 .breadcrumb {
     margin: 16px 0 16px 0;
 }
@@ -14,4 +18,15 @@
 .breadcrumb-item {
     color: #666666;
     font-size: 14px;
+}
+
+.back-to-list {
+    margin: 16px 16px 0 0;
+    color: #666666;
+    font-size: 14px;
+}
+
+.back-to-list:after {
+    content: ' | ';
+    margin-left: 10px;
 }

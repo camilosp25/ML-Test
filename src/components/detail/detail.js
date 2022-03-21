@@ -34,7 +34,7 @@ export const Detail = () => {
     return (
         <>
             <div className="main-container main-container">
-                <Breadcrumb/>
+                <Breadcrumb isDetail={true}/>
                 <div className="container-detail">
                     <div className="product-detail-container">
                         <div className="product-image-container">
