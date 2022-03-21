@@ -70,3 +70,7 @@
     width: 100%;
 }
 
+.button-buy button:hover {
+    color: #FFFFFF;
+}
+

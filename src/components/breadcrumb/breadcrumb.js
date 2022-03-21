@@ -1,7 +1,7 @@
-import React, {useContext} from "react";
-import {Link} from "react-router-dom";
+import React, {useContext} from 'react';
+import {Link} from 'react-router-dom';
 import './breadcrumb.css';
-import {ListContext} from "../ListContext";
+import {ListContext} from '../ListContext';
 
 export const Breadcrumb = ({isDetail = false}) => {
 
@@ -23,7 +23,17 @@ export const Breadcrumb = ({isDetail = false}) => {
                                     ))
                                 ))
                             }
-                            {/*<li className="breadcrumb-item active" aria-current="page">Library</li>*/}
+                        </ol>
+                    </nav>
+                )
+            } else {
+                return (
+                    <nav aria-label="breadcrumb" className="breadcrumb-container">
+                        {
+                            ((isDetail) ? (<Link to={"/items"} className="back-to-list">Volver al listado</Link>) : '')
+                        }
+                        <ol className="breadcrumb">
+                            <li className="breadcrumb-item active">{response.query}</li>
                         </ol>
                     </nav>
                 )
@@ -33,11 +43,9 @@ export const Breadcrumb = ({isDetail = false}) => {
 
     return (
         <>
-            <div>
-                {
-                    validateResponse()
-                }
-            </div>
+            {
+                validateResponse()
+            }
         </>
     )
 }

@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import NumberFormat from 'react-number-format';
 import './item.css';
-import {Link} from "react-router-dom";
-import {useNavigate} from "react-router";
-import {conditionText} from "../../helpers/utils";
+import {Link} from 'react-router-dom';
+import {useNavigate} from 'react-router';
+import {conditionText} from '../../helpers/utils';
 
 export const Item = ({item}) => {
 

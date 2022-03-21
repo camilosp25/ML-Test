@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from 'react';
 import NumberFormat from 'react-number-format';
+import {Breadcrumb} from '../breadcrumb/breadcrumb';
+import {conditionText} from '../../helpers/utils';
+import {getDetail} from '../../helpers/productsService';
+import {useParams} from 'react-router';
 import './detail.css';
-import {Breadcrumb} from "../breadcrumb/breadcrumb";
-import {conditionText} from "../../helpers/utils";
-import {getDetail} from "../../helpers/productsService";
-import {useParams} from "react-router";
 
 export const Detail = () => {
 

@@ -18,3 +18,17 @@
     display: flex;
     width: 100%;
 }
+
+.input-group-text {
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-control {
+    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
