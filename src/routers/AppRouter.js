@@ -5,6 +5,11 @@ import {Detail} from '../components/detail/detail';
 import {Search} from '../components/search/search';
 import {Home} from '../components/home/home';
 
+/**
+ * Routes del proyecto
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export function AppRouter() {
     return (
         <BrowserRouter>

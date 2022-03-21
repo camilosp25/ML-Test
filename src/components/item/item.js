@@ -5,11 +5,21 @@ import {Link} from 'react-router-dom';
 import {useNavigate} from 'react-router';
 import {conditionText} from '../../helpers/utils';
 
+/**
+ * Componente de cada item del listado de la busqueda
+ * @param item
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export const Item = ({item}) => {
 
     const thumbnail = item.thumbnail;
     const navigate = useNavigate();
 
+    /**
+     * Manejador para invocar y redireccionar a componente detalle
+     * @param e
+     */
     const handleDetail = (e) => {
         e.preventDefault();
 

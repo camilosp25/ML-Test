@@ -4,6 +4,11 @@ import {Breadcrumb} from '../breadcrumb/breadcrumb';
 import {Item} from '../item/item';
 import {ListContext} from '../ListContext';
 
+/**
+ * Componente listado de resultados de busqueda
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export const List = () => {
 
     const {response} = useContext(ListContext);

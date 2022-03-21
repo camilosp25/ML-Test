@@ -3,12 +3,23 @@ import {Link} from 'react-router-dom';
 import './breadcrumb.css';
 import {ListContext} from '../ListContext';
 
+/**
+ * Componente manejador del breadcrumb
+ * @param isDetail
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export const Breadcrumb = ({isDetail = false}) => {
 
     const {response} = useContext(ListContext);
 
+    /**
+     * Validador de respuesta del servicio search para condicionar datos que se muestran en breadcrumb
+     * @returns {JSX.Element}
+     */
     const validateResponse = () => {
         if (Object.keys(response).length > 0) {
+            //Servicio retorna filter
             if (response.filters.length > 0) {
                 return (
                     <nav aria-label="breadcrumb" className="breadcrumb-container">
@@ -26,6 +37,7 @@ export const Breadcrumb = ({isDetail = false}) => {
                         </ol>
                     </nav>
                 )
+                //Servicio no retorna filter se muestra lo que se envio en la caja de busqueda
             } else {
                 return (
                     <nav aria-label="breadcrumb" className="breadcrumb-container">
@@ -38,6 +50,15 @@ export const Breadcrumb = ({isDetail = false}) => {
                     </nav>
                 )
             }
+            //Se llega al componente por url
+        } else {
+            return (
+                <nav aria-label="breadcrumb" className="breadcrumb-container">
+                    <ol className="breadcrumb">
+                        <li className="breadcrumb-item active">Detalle de producto</li>
+                    </ol>
+                </nav>
+            )
         }
     }
 

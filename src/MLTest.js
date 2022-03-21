@@ -7,6 +7,7 @@ function MLTest() {
     const [response, setProducts] = useState({});
 
     return (
+        // Context provider para facilitar la comunicacion entre componentes
         <ListContext.Provider value={{
             response,
             setProducts

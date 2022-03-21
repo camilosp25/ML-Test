@@ -4,6 +4,11 @@ import {search} from '../../helpers/productsService';
 import {useNavigate} from 'react-router';
 import {ListContext} from '../ListContext';
 
+/**
+ * Componente de la caja de busqueda
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export const Search = () => {
 
     const imageLogoPath = `/assets/logo.png`;
@@ -12,6 +17,10 @@ export const Search = () => {
     const navigate = useNavigate();
     const {setProducts} = useContext(ListContext);
 
+    /**
+     * Manejador del submit del formulario de busqueda
+     * @param e
+     */
     const handleSubmit = (e) => {
         e.preventDefault();
 

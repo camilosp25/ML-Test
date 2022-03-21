@@ -6,6 +6,11 @@ import {getDetail} from '../../helpers/productsService';
 import {useParams} from 'react-router';
 import './detail.css';
 
+/**
+ * Componente para mostrar el detalle de producto
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export const Detail = () => {
 
     const [detail, setDetail] = useState({
@@ -16,6 +21,9 @@ export const Detail = () => {
 
     const {id} = useParams();
 
+    /**
+     * Consulta de endpoints de detalle y descripción al momento de invocar el componente
+     */
     useEffect(() => {
         getDetail(id).then((data) => {
             setDetail({
@@ -34,6 +42,7 @@ export const Detail = () => {
     return (
         <>
             <div className="main-container main-container">
+                {/*Invocacion componente breadcrumb*/}
                 <Breadcrumb isDetail={true}/>
                 <div className="container-detail">
                     <div className="product-detail-container">

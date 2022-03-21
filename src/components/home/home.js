@@ -1,6 +1,11 @@
 import React from 'react';
 import './home.css'
 
+/**
+ * Componente inicial
+ * @returns {JSX.Element}
+ * @constructor
+ */
 export const Home = () => {
 
     return (
